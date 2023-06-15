@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>G-Donation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+  margin: 0px; 
+  background-color: #00d7fe;
+}
+* {
+  font-family: Montserrat;
+  text-decoration: none; overflow-x: hidden;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+#DEBUG {
+  background: linear-gradient(0deg, #2266cc 0%, #55cc22 100%);
+  border: 5px solid #ff00ff; box-sizing: border-box; 
+}
+
+/* 
+MENU 
+*/
+.menu {
+  width: 100%; height: 100px; 
+  background-color: #fafafa;
+  position: fixed; z-index: 100; 
+}
+.menu .logo {
+  padding: 25px 20px 9px 55px; 
+}
+.logolink:hover {
+  opacity: 0.8;
+}
+.menu .menuwrap {
+  position: absolute; 
+  right: 40px; top: 40px; 
+  overflow: visible; 
+  
+  color: #666;
+}
+.menu .menuwrap .a {
+  padding: 5px; cursor: pointer; 
+  font-weight: 400; 
+  border-bottom: 4px solid transparent; 
+}
+.menu .menuwrap .a:hover {
+  border-bottom: 4px solid #00d7fe; 
+}
+.menuItemActive {
+  color: #000; border-bottom: 4px solid #00d7fe !important; 
+}
+.menuScroll {
+  height: 60px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.1); 
+}
+.logoScroll {
+  width: 75px; margin-top: -10px; 
+}
+.menuwrapScroll {
+  margin-top: -20px; 
+}
+
+/* 
+SECTIONS
+*/
+#wrapper {
+  margin-bottom: 320px; 
+  position: relative;
+  z-index: 2;
+}
+.section {
+  background-color: #fcfcfc; 
+  width: 100%; padding: 150px 0px 50px 0px;
+  overflow: hidden;
+}
+h1, h2, h3, h4, h5 {
+  font-family: Montserrat;
+  margin: 0;
+  overflow: hidden;
+}
+h1 {
+  color: #00b4ff; font-size: 55px; 
+  font-weight: 700; 
+  padding: 10px 0 10px 0; 
+}
+h2 {
+  font-size: 22px; 
+  font-weight: 500; 
+  color: #333;
+}
+p {
+  color: rgb(110, 119, 118); 
+  font-size: 18px; font-weight: 400; font-family: HelveticaNeue;
+}
+
+/* 
+HOMEPAGE
+*/
+.homepage {
+  background-color: #fff; 
+  box-sizing: border-box; padding: 150px 50px 100px 50px; 
+}
+.homepage h1 {
+  width: 100%; 
+  line-height: 65px; 
+  font-weight: 700; 
+  padding: 10px 0 10px 0; 
+  position:relative; z-index: 10; 
+  color: rgb(61, 60, 58);
+}
+.homepage b {
+  color: #00d7fe;
+}
+.homepage .b2 {
+  font-weight: normal;
+}
+.homepage h2 {
+  position:relative; z-index: 10; 
+  width: 60%; max-width: 600px; 
+  font-weight: 500; 
+}
+.button {
+  background-color: #00b4ff; 
+  width: 175px; height: 55px; 
+  border-radius: 50px; 
+  text-align: center;
+  margin-top: 40px; 
+  border: 5px solid #00b4ff; 
+  color: white; font-size: 20px; line-height: 55px; cursor: pointer; font-weight: 600; 
+}
+.button:hover {
+  color: #00b4ff; 
+  background-color: #fff; 
+  box-shadow: 0 0 15px rgba(0,0,0,0.35); 
+}
+.homepage img {
+  right: 5%; margin-top: -290px; position: absolute; z-index: 1; 
+  width: 40%; max-width: 500px; 
+}
+
+/* 
+WHAT WE DO
+*/
+.whatwedo {
+  height: auto; 
+  background-color: #fff;
+}
+.DAF_wrap {
+  display: table;
+  height: auto;
+  table-layout: fixed;
+  width: 1000px;
+  margin: auto; 
+}
+.captionWrap {
+  display: table-cell;
+  height: auto;
+  vertical-align: middle;
+  width: 500px;
+  text-align: right;
+}
+.DAFtitle {
+  color: rgb(61, 60, 58); 
+  height: auto;
+  letter-spacing: 1px;
+  width: 500px;
+  font: 600 45px / 49.5px Montserrat;
+}
+.DAFdescription {
+  color: rgb(110, 119, 118); 
+  height: auto;
+  width: 500px;
+  font: 20px / 33px HelveticaNeue;
+}
+.aLink {
+  color: rgb(48, 64, 59);
+  text-decoration: none solid rgb(48, 64, 59);
+  border-bottom: 3px solid #00d7fe;
+  font: 20px / 33px "open sans", HelveticaNeue;
+}
+.DAFspacer {
+  display: table-cell;
+  height: 424px;
+  width: 30px;
+}
+.DAF_img {
+  margin-top: 35px; height: auto; 
+}
+.img1 {
+  margin-top: 60px; 
+}
+.img2 {
+  margin: 75px 0 0 50px; width: 430px; 
+}
+
+/* 
+STRATEGY
+*/
+.strategy {
+  height: auto; background-color: #fff; 
+  padding-left: 0px; 
+}
+.strategy .DAF_img img {
+  display: block; width: 100%;
+  margin: auto;
+}
+ul {
+  width: 90%; max-width: 1100px; 
+  margin: auto; margin-top: -120px; 
+  display: flex; flex-direction: row; 
+  flex-wrap: wrap; 
+  padding: 20px 20px 80px 20px; 
+}
+li {
+  overflow: visible; list-style: none; 
+  color: rgb(110, 119, 118);
+  font: 20px / 33px HelveticaNeue; text-align: left; 
+  font-family: “Helvetica Neue”, Helvetica, Arial;
+  font-weight: 300;
+  flex: 50%; min-width: 350px; 
+  padding: 0px 15px 10px 15px; box-sizing: border-box; 
+  margin: 0px; 
+}
+li img {
+  display: block; width: 100px; 
+  padding: 8px; box-sizing: border-box; 
+}
+li h3 {
+  color: #333;
+}
+.strategy .stratLeft {
+  width: 50%; height: 700px; 
+  border-top: 50px solid #fff; border-bottom: 50px solid #fff;
+  background-color: #f7f7f7;
+  float: left;
+  box-sizing: border-box; padding: 50px; 
+}
+.strategy .stratLeft h1 {
+  margin-top: 100px; color: rgb(61, 60, 58);
+  line-height: 30px; 
+}
+.strategy .stratLeft p {
+  font: 20px / 33px HelveticaNeue; 
+}
+.strategy .stratRight {
+  width: 49.99%; height: 700px; 
+  background-color: rgb(0,150,225); 
+  position: absolute; right: 0px; 
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.4); 
+  overflow: hidden; 
+}
+.strategy table {
+  width: 80%; max-width: 500px; 
+  text-align: right; color: #fff; 
+  margin: 150px auto 0px; 
+  border-collapse: collapse;
+}
+.strategy tr {
+  border-bottom: 1px solid rgba(255,255,255,0.3); 
+  padding: 25px 0px 25px 0px; 
+}
+.strategy td,th {
+  padding: 15px 0px 15px 0px; 
+}
+.strategy p.disclosure {
+  color: rgba(255,255,255,0.4);
+  width: 80%; max-width: 500px; margin: 60px auto;
+  font-size: 10px; 
+}
+
+/* 
+TEAM
+*/
+.team {
+  background-color: #fff; 
+  box-sizing: border-box; padding: 150px 50px 150px 50px; 
+}
+.team h1 {
+  margin: 0px; text-align: center; 
+  color: rgb(61, 60, 58); 
+}
+.team p {
+  margin: 10px auto; width: 75%; 
+  font: 20px / 33px HelveticaNeue;
+}
+.team h3  {
+  text-align: left; font-size: 15px; 
+  margin-top: 5px; color: #00b4ff; 
+}
+.team h4  {
+  font-size: 12px; font-weight: normal; text-align: left;
+  color: #777; 
+  margin-top: 10px; 
+}
+.team .teamWrap {
+  width: 100%; height: auto; 
+  text-align: center; margin: auto;
+  padding: 35px 0 10px 0; overflow: visible;
+  display: flex; justify-content: center;
+  align-items: center;
+}
+.team .memberWrap {
+  width: 200px; height: 490px;
+  background-color: rgba(0,0,0,0.0); 
+  border: 15px solid white; 
+  box-shadow: 0 0 10px lightgray; border-radius: 4px; 
+  margin: 10px;
+}
+.team img {
+  width: 100%; 
+}
+.team .memberWrap:hover {
+  
+}
+
+/* 
+JOIN NOW
+*/
+.joinnow {
+  background: url(https://i.ibb.co/JknsS8s/BG.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center; height: 400px;
+}
+.joinnowbtn {
+  margin: 130px auto; box-shadow: 0 0 30px rgba(0,0,0,0.7); 
+}
+
+/* 
+FOOTER
+*/
+footer {
+  position: fixed;z-index: 1;bottom: 0;
+  background: #fff;color: #00b4ff; font-size: 100px; text-align: center; 
+  width: 100%;height: 320px;
+  box-sizing: border-box; padding: 70px 70px 30px 70px;text-align: right; 
+}
+footer .logolink {
+  float: left; margin-top: 85px; position: absolute; left: 70px; 
+}
+footer .instalink {
+  
+}
+footer .instalink:hover {
+  opacity: 0.6; 
+}
+footer p {
+  text-align: right; color: #111; font-size: 14px; margin-top: -5px; 
+}
+footer p.copyright {
+  text-align: center; position: absolute; margin-top: -30px; 
+  width: 100%; margin-left: -70px; 
+}
+
+@media screen and (max-width: 990px) {
+  /* For mobile: */
+  .menu {height: 110px; }
+  .menuScroll {height: 60px; }
+  .menuwrap {display: none; }
+  h1 {
+    font-size: 2.5em; line-height: 3em;
+  }
+  h2, h3, h4 {
+    font-size: 1.5em; line-height: normal; 
+  }
+  .homepage img {
+    position: absolute; margin: auto; top: 15em; left: 0; right: 0;
+    width: 75%; 
+  }
+  .homepage h1 {line-height: 1em;}
+  .homepage h2 {
+    margin-top: 5em; width: 100%; max-width: 1000px; 
+  }
+  .button {
+    margin: 40px auto;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  /* For desktop: */
+
+}
+
+  </style>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+  $('#home').addClass('menuItemActive');
+  
+  //MENU SCROLL CHANGE
+  $(window).scroll(function(){
+    if($(this).scrollTop() > 75){
+      $('.menu').addClass('menuScroll');
+      $('.logo').addClass('logoScroll');
+      $('.menuwrap').addClass('menuwrapScroll');
+    } else {
+      $('.menu').removeClass('menuScroll');
+      $('.logo').removeClass('logoScroll');
+      $('.menuwrap').removeClass('menuwrapScroll');
+    }
+    
+    $('.a').removeClass('menuItemActive');
+    
+    if($(this).scrollTop() < $('.whatwedo').offset().top-50){
+      $('#home').addClass('menuItemActive');
+    } else if ($(this).scrollTop() < $('.strategy').offset().top-100) {
+      $('#whatwedo').addClass('menuItemActive');
+    } else if ($(this).scrollTop() < $('.team').offset().top-50) {
+      $('#strategy').addClass('menuItemActive');
+    } else if ($(this).scrollTop() < $('.joinnow').offset().top-200) {
+      $('#team').addClass('menuItemActive');
+    } else {
+      $('#joinnow').addClass('menuItemActive');
+    }
+    
+  });
+  
+  // MENU CLICK
+  $('.a').click(function() {
+    $('.a').removeClass('menuItemActive');
+    $(this).addClass('menuItemActive');
+  });
+  
+  $('#home').click(function() {
+    $('html, body').animate({scrollTop:$('.homepage').offset().top},500);
+  });
+  $('#logolink').click(function() {
+    $('html, body').animate({scrollTop:$('.homepage').offset().top},500);
+  });
+  $('#logolink2').click(function() {
+    $('html, body').animate({scrollTop:$('.homepage').offset().top},500);
+  });
+  $('#whatwedo').click(function() {
+    $('html, body').animate({scrollTop:$('.whatwedo').offset().top-50},500);
+  });
+  $('.learnMore').click(function() {
+    $('html, body').animate({scrollTop:$('.whatwedo').offset().top-50},500);
+  });
+  $('#strategy').click(function() {
+    $('html, body').animate({scrollTop:$('.strategy').offset().top-100},500);
+  });
+  $('.aLink').click(function() {
+    $('html, body').animate({scrollTop:$('.strategy').offset().top-50},500);
+  });
+  $('#team').click(function() {
+    $('html, body').animate({scrollTop:$('.team').offset().top-50},500);
+  });
+  $('#joinnow').click(function() {
+    $('html, body').animate({scrollTop:$('.joinnow').offset().top},500);
+  });
+  
+});
+
+  </script>
+  <!-- Start of Async Drift Code -->
+<script>
+	"use strict";
+	
+	!function() {
+	  var t = window.driftt = window.drift = window.driftt || [];
+	  if (!t.init) {
+		if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+		t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+		t.factory = function(e) {
+		  return function() {
+			var n = Array.prototype.slice.call(arguments);
+			return n.unshift(e), t.push(n), t;
+		  };
+		}, t.methods.forEach(function(e) {
+		  t[e] = t.factory(e);
+		}), t.load = function(t) {
+		  var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+		  o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+		  var i = document.getElementsByTagName("script")[0];
+		  i.parentNode.insertBefore(o, i);
+		};
+	  }
+	}();
+	drift.SNIPPET_VERSION = '0.3.1';
+	drift.load('c3aurgtk94ca');
+	</script>
+	<!-- End of Async Drift Code -->
+</head>
+  
+<body>
+<div class="menu">
+  <a href="#homepage" class="logolink"id="logolink"><img src="IMG/GLOGO.jpg" class="logo" width="125" alt="G-Donation"></a>
+  
+  <div class="menuwrap">
+    <a id="home" class="a">Home</a>
+    <a id="whatwedo" class="a">What we do</a>
+    <a id="strategy" class="a">Our Strategy</a>
+    <a id="team" class="a">Team</a>
+    <a id="joinnow" class="a">Join now</a>
+  </div>
+</div>
+
+<div id="wrapper">
+  <div class="section homepage">
+    <h1>Welcome to <br>G-Donation<b>.</b></h1>
+    <h2><b class="b2">Investing made non-profit.</b> Maximize your donations to charitable organizations through a donor-advised fund, curated for you.</h2>
+    <div class="button learnMore">Learn more</div>
+    <img src="IMG/LO.gif">
+  </div>
+  
+  <div class="section whatwedo">  
+    <div class="DAF_wrap">
+    <div class="captionWrap">
+     <h2 class="DAFtitle">
+    A simple, tax-efficient method to donate
+        </h2>
+     <p class="DAFdescription">
+    It’s a charitable investment account. A donor-advised fund allows you to grow your donations until you’re ready to decide where your contributions should go, while receiving the same tax benefits as donating directly. To ensure socially responsible charitable giving and sustainable investing, our clients’ charitable plans remain at the forefront of Dono’s investment approach.
+        </p>
+      <a href="#" class="aLink">More on our strategy</a>
+     </div>
+	<div class="DAFspacer">
+	</div>
+	<div class="DAF_img img1">
+					<img src="https://iili.io/JD0chb.gif" width="90%"/>
+	</div>
+</div>
+  </div>
+  
+  <div class="section strategy">
+    <div class="DAF_wrap">
+      <div class="DAF_img img2">
+        <img src="https://i.ibb.co/fvXNdKK/HUMAN-AI-small.png"/>
+      </div>
+      <div class="DAFspacer"></div>
+      <div class="captionWrap" style="text-align:left;">
+        <h2 class="DAFtitle">Our Strategy</h2>
+        <p class="DAFdescription DAF2">The fund’s investment philosophy is a two-pronged approach: we use sophisticated fundamentals systematically applied through state-of-the-art machine learning algorithms.</p>
+      </div>
+    </div><br>
+    
+   <ul>
+     <li><img src="https://i.ibb.co/6m0PH8N/1-2.png"><h3>Process</h3>g-Dono’s foundation is a continuous progression of design, refine, test, and repeat. By continuously generating, analyzing, and evaluating new opportunities, our trading and research team systematically integrate new models inspired by economic hypotheses into our investment strategies.</li>
+       <br>
+     <li><img src="https://i.ibb.co/tPS2rLQ/2.png"><h3>Analysis</h3>Analyzing historical and current data through quantitative modeling and predictive analytics, we are able to profoundly understand the underlying patterns within a market, and improve the overall accuracy of our vision. </li>
+       <br>
+     <li><img src="https://i.ibb.co/CvK0jp2/3.png"><h3>Implementation</h3>We’re meticulous in every aspect of our investment approach. Implementing a broad range of investment strategies allows us deploy our capital with one eye on generating real alpha, and the other on effectively managing risk. </li>
+       <br>
+     <li><img src="https://i.ibb.co/bL3Kkkn/4.png"><h3>Synergy</h3>We believe teamwork is essential for effective risk management. Our small team enables us to seamlessly integrate all components of our investment approach. By working together in managing risk, we have established a dynamic that ensures portfolios are manageable through sudden and severely adverse stress events.
+  </li>
+    </ul>
+    
+    <div class="stratLeft">
+      <h1>Performance</h1>
+      <p>G-Donation seeks to generate alpha by investing in commodities, currencies, and securities in global markets by combining rigorous fundamental research with mathematical and statistical models to identify and execute on investment opportunities. 
+</p>
+    </div>
+    <div class="stratRight">
+
+<table>
+  <tr>
+    <th> </th>
+    <th>G-Donation</th>
+    <th>S&P 500</th>
+  </tr>
+  <tr>
+    <td>Sharpe Ratio</td>
+    <td>2.08</td>
+    <td>0.41</td>
+  </tr>
+  <tr>
+    <td>Beta</td>
+    <td>3.12</td>
+    <td>1.00</td>
+  </tr>
+  <tr>
+    <td>Alpha</td>
+    <td>10.64%</td>
+    <td>0.00%</td>
+  </tr>
+  <tr>
+    <td>2020 YTD</td>
+    <td>14.73%</td>
+    <td>-3.92%</td>
+  </tr>
+  <tr>
+    <td>2019</td>
+    <td>42.81%</td>
+    <td>11.83%</td>
+  </tr>
+  <tr>
+    <td>All-Time return</td>
+    <td>63.85%</td>
+    <td>-3.92%</td>
+  </tr>
+  <tr>
+    <td>Annualized Rate of Return</td>
+    <td>50.87%</td>
+    <td>6.13%</td>
+  </tr>
+</table>
+      
+      <p class="disclosure">All performance results are net of fees and include dividends and other adjustments. 2020 YTD results are from 1/1/20 through 7/4/20. 2019 results are from Dono’s launch date of 4/20/19 through 12/31/19. All-Time Return is from Dono’s launch date of 4/20/19 through 7/4/20.
+</p>
+      
+    </div>
+    <div></div>
+  </div>
+  
+  <div class="section team">
+    <h1>Who we are</h1>
+    <p>We are a small group of individuals with a wide range of personal interests, backgrounds, and skillsets who are looking to push themselves and support our clients in their charitable giving in a sustainable and effective fashion. Our expertise spans macro views, monetary policy, and the intersection of big data and machine learning.</p>
+    <div class="teamWrap">
+      <div class="memberWrap">
+        <img src="IMG/g.jpg" width="200px">
+        <h3>Gaurav Tripathi<br>Co-founder, Managing Director</h3>
+        <h4>Tripathi has over 7 years of experience trading currencies and securities, applying the global macro and quantitative strategies that Dono uses today. He has conducted research on European monetary policy at Bocconi University and is currently studying at Phillips Exeter Academy with a concentration in Math and Economics. 
+</h4>
+      </div>
+      <div class="memberWrap">
+        <img src="IMG/g.jpg" width="200px">
+        <h3>Gaurav Tripathi<br>Co-founder, Managing Director</h3>
+        <h4>Gaurav Tripathi grew up in Moscow, Russia, writing his first line of code at 7 years old. At Dono, he applies his passion for machine learning to the markets. He is currently studying at Phillips Exeter Academy with a concentration in Computer Science and Math.
+</h4>
+      </div>
+      <div class="memberWrap">
+        <img src="IMG/g.jpg" width="208px" style="filter: grayscale(1);">
+        <h3>Gaurav Tripathi<br>Head of Design, Chief Architect</h3>
+        <h4>Gaurav Tripathi Starting coding at nine and design at eleven, Alex began his journey into the world of technology at a young age.  His broad range of skills allowed him to gain real world experience working for corporate clients including Google, Duuzra, and more. </h4>
+      </div>
+      <div class="memberWrap">
+        <img src="IMG/g.jpg" width="200px">
+        <h3>Gaurav Tripathi<br>Head of Quantitative Trading</h3>
+        <h4>Gaurav Tripathi has extensive experience as a software developer for Venafi Inc. and Acorn AI. At Dono, along with leading the quantitative division, he studies the implications of machine learning in regards to statistical arbitrage and value investing. He is currently studying computer science at Stanford University.
+</h4>
+      </div>
+      <div class="memberWrap">
+        <img src="IMG/g.jpg" width="200px">
+        <h3>Gaurav Tripathi<br>Macro-Advisor</h3>
+        <h4>Gaurav Tripathi to joining Dono, Neil served as the senior analyst for Daily Thermetrics where he studied the power and fuel markets with a focus on risk analysis and stochastic processes to support the expansion of Daily Thermetrics. He is currently studying economics at the University of Miami.
+</h4>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section joinnow">
+    <a href="#"><div class="button joinnowbtn">JOIN NOW</div></a>
+  </div> 
+</div>
+
+<footer>
+  <a href="#homepage" class="logolink"id="logolink2"><img src="IMG/GLOGO.jpg" width="160px" alt="DONO"></a>
+  <a href="#" target="_blank"class="instalink"><img src="https://i.ibb.co/kxdDRRh/dono-instagram-01.png" width="30" alt="instagram"></a>
+  <p>INDIA<br>
+    U.P<br>
+    BHADOHI PIN 221314
+  </p>
+  <p>+91 8299890048</p>
+  <p class="copyright">&#169; 2023 All Rights reserved | G-DonATION</p>
+</footer>
+</body>
+</html>
